@@ -4,3 +4,6 @@
 [submodule "css/lib/typecode-css"]
 	path = css/lib/typecode-css
 	url = git@github.com:typecode/typecode-css.git
+[submodule "js/lib/jquery-hashchange"]
+	path = js/lib/jquery-hashchange
+	url = https://github.com/cowboy/jquery-hashchange.git
