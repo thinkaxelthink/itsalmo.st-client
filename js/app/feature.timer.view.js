@@ -8,11 +8,13 @@
 			
 	page.features.push(function(app){
 		
-		var timer;
+		var timer, dom, timeout;
+		
+		dom = $('.pane.timer-pane');
 		
 		function cycle(){
 			update_display();
-			setTimeout(cycle,1000);
+			timeout = setTimeout(cycle,1000);
 		};
 		
 		function update_display(){
@@ -25,11 +27,17 @@
 		};
 		
 		app.events.bind('timer.manager.timerLoaded',function(e,d){
+			console.log('view: timer.manager.timerLoaded');
+			dom.show();
 			timer = d;
 		});
 		
 		app.events.bind('timer.manager.noTimerLoaded',function(e,d){
-			
+			console.log('view: timer.manager.noTimerLoaded');
+			dom.hide();
+			if(timeout){
+				clearTimeout(timeout);
+			}
 		});
 		
 		cycle();
