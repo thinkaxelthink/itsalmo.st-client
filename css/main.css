@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 * { font-family:Helvetica, sans-serif;  }
 
 /* all tiers are automatically clearfix'd */
@@ -6,6 +7,9 @@
 .tier:after { clear:both; }
 .tier { zoom:1; }
 
+=======
+* { font-family: omnes-pro; }
+>>>>>>> 54aeee84cf5c06912efe21c3511e8ff7653a09b6
 .content { margin-top:300px; }
 p { font-size:40px; }
 

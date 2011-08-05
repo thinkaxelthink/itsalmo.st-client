@@ -20,7 +20,7 @@
 				case 'beertime':
 					return {
 						title:'Beer Time',
-						expires:new Date(2011, 08, 05, 17, 0, 0, 0)
+						expires:new Date(2011, 08, 05, 18, 0, 0, 0)
 					}
 					break;
 			}
