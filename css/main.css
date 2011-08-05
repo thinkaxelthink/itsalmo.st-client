@@ -1,4 +1,14 @@
 * { font-family:Helvetica, sans-serif;  }
 
+/* all tiers are automatically clearfix'd */
+.tier:before,
+.tier:after { content:""; display:table; }
+.tier:after { clear:both; }
+.tier { zoom:1; }
+
 .content { margin-top:300px; }
 p { font-size:40px; }
+
+
+.footer { position:fixed; bottom:0; width:100%; background-color:#f0efee; }
+.footer .tier { padding:20px 30px; }

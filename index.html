@@ -27,8 +27,46 @@
 	<body>
 			
 			<div class='content'>
-				<p class='description' style='display:none;'>It's Almost <span>&nbsp;</span></p>
-				<p class='timer'></p>
+				<div class='pane start-pane'>
+					<div class='tier countdown-name'>
+						<label>It's almost</label>
+						<input type='text' value=''/>
+					</div>
+					<div class='tier countdown-details'>
+						<label>on</label>
+						<input type='text' value=''/>
+						<label>at</label>
+						<input type='text' value=''/>
+						<span class='input-sep'>:</span>
+						<input type='text' value=''/>
+						<input type='text' value=''/>
+					</div>
+					<div class='tier'>
+						<a id='start-btn' class='btn' href='#'>
+							<span>start the countdown</span>
+						</a>
+					</div>
+				</div>
+				<div class='pane timer-pane'>
+					<p class='description' style='display:none;'>It's Almost <span>&nbsp;</span></p>
+					<p class='timer'></p>
+				</div>
+				<div class='pane share-pane'>
+					
+				</div>
+			</div>
+			
+			<div class='footer'>
+				<div class='tier'>
+					<div class='social'>
+						
+					</div>
+					<div class='logo'>
+						<a href='http://typeslashcode.com'>
+							<span>Type/Code</span>
+						</a>
+					</div>
+				</div>
 			</div>
 			
 			<!-- json2 http://www.json.org/js.html -->
