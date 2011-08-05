@@ -11,7 +11,7 @@ body { font-family: omnes-pro; color:#8e8b8a; }
 .pane p { font-size:40px; }
 
 .pane label { 
-	display:block; float:left; padding:0 30px 0 0; 
+	display:block; float:left; padding:0 30px; 
 	font-size:48px; 
 }
 .pane input[type=text] { 
@@ -23,9 +23,14 @@ body { font-family: omnes-pro; color:#8e8b8a; }
 	-webkit-box-shadow:0 0 5px #84cef5;
 	box-shadow:0 0 5px #84cef5;
 }
+.pane input[type=text].time-component { width:55px; }
+
+.input-sep { display:block; float:left; }
 
 .start-pane .tier { margin:100px 0 0; }
 .start-pane .tier:first-child { margin-top:0; }
+
+.start-pane #countdown-date { width:240px; }
 
 .footer { position:fixed; bottom:0; width:100%; text-align:left; background-color:#f0efee; }
 .footer .tier { padding:20px 30px; }
