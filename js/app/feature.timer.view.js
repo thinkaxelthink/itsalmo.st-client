@@ -18,22 +18,22 @@
 		function update_display(){
 			if(!timer){ return false; }
 			var diff;
-			
-			diff = new Date(timer.expires - new Date(Date.now()));
-			
+			diff = timer.expires.getTime() - Date.now();
 			$('.description span').text(timer.title);
 			$('.description').show();
-			$('.timer').text(''+
-				diff.getMinutes() + ' Minutes ' +
-				diff.getSeconds() + ' Seconds');
+			$('.timer').text(diff);
 		};
 		
 		app.events.bind('timer.manager.timerLoaded',function(e,d){
 			timer = d;
 		});
 		
+		app.events.bind('timer.manager.noTimerLoaded',function(e,d){
+			
+		});
+		
 		cycle();
 		
 	});
 	
-})(window);
+})(this);
