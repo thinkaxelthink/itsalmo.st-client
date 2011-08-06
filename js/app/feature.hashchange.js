@@ -12,7 +12,7 @@
 		$w = $(window);
 		$w.hashchange(function(){
 			app.events.trigger('hashchange.hashChanged',{
-				hash:window.location.hash
+				hash:window.location.hash.substring(1,window.location.hash.length).toLowerCase()
 			});
 		});
 		

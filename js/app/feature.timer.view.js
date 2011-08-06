@@ -27,13 +27,11 @@
 		};
 		
 		app.events.bind('timer.manager.timerLoaded',function(e,d){
-			console.log('view: timer.manager.timerLoaded');
 			dom.show();
 			timer = d;
 		});
 		
 		app.events.bind('timer.manager.noTimerLoaded',function(e,d){
-			console.log('view: timer.manager.noTimerLoaded');
 			dom.hide();
 			if(timeout){
 				clearTimeout(timeout);

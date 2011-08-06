@@ -8,9 +8,14 @@
 
 	page.features.push(function(app){
 		
+		$.ajaxSetup({
+			cache: false,
+			dataType: 'json'
+		});
+		
 		function lookup_timer(id){
 			if(!id){ return false; }
-			switch(id.substring(1,id.length).toLowerCase()){
+			switch(id){
 				case 'goinghome':
 					return {
 						title:'Going Home',
@@ -26,6 +31,34 @@
 			}
 			return false;
 		}
+		
+		function get_timer(id){
+			$.ajax({
+				url:'/timer/'+id,
+				method:'POST',
+				data:timer,
+				success:function(data, textStatus, jqXHR){
+				
+				},
+				error:function(jqXHR, textStatus, errorThrown){
+					
+				}
+			});
+		};
+		
+		function create_timer(timer){
+			$.ajax({
+				url:'/timer/',
+				method:'POST',
+				data:timer,
+				success:function(data, textStatus, jqXHR){
+					
+				},
+				error:function(jqXHR, textStatus, errorThrown){
+					
+				}
+			});
+		};
 		
 		app.events.bind('hashchange.hashChanged',function(e,d){
 			var timer;
