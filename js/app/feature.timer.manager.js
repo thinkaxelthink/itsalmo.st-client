@@ -35,13 +35,13 @@
 		function get_timer(id){
 			$.ajax({
 				url:'/timer/'+id,
-				method:'POST',
-				data:timer,
+				method:'GET',
 				success:function(data, textStatus, jqXHR){
-				
+					console.log(data);
+					app.events.trigger('timer.manager.timerLoaded',data);
 				},
 				error:function(jqXHR, textStatus, errorThrown){
-					
+					app.events.trigger('timer.manager.noTimerLoaded',{});
 				}
 			});
 		};
@@ -52,21 +52,16 @@
 				method:'POST',
 				data:timer,
 				success:function(data, textStatus, jqXHR){
-					
+					app.events.trigger('timer.manager.timerLoaded',data);
 				},
 				error:function(jqXHR, textStatus, errorThrown){
-					
+					app.events.trigger('timer.manager.noTimerLoaded',{});
 				}
 			});
 		};
 		
 		app.events.bind('hashchange.hashChanged',function(e,d){
-			var timer;
-			if(timer = lookup_timer(d.hash)){
-				app.events.trigger('timer.manager.timerLoaded',timer);
-				return;
-			}
-			app.events.trigger('timer.manager.noTimerLoaded',{});
+			get_timer(d.hash);
 		});
 		
 	});
