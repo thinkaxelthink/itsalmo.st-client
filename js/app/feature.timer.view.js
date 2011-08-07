@@ -41,6 +41,7 @@
 			if(timeout){
 				clearTimeout(timeout);
 			}
+			document.title = 'It\'s Almost ' + timer.name; 
 			cycle();
 		});
 		

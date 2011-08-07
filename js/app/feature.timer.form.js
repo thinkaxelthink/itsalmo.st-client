@@ -28,6 +28,7 @@
 		
 		function clear_form(){
 			var future;
+			document.title = 'It\'s Almost'; 
 			future = new Date();
 			future.setMinutes(future.getMinutes()+30);
 			elements.url.css({
@@ -47,6 +48,10 @@
 			}
 			oldTempTimerId = tempTimerId;
 			if(!tempTimerId.length){
+				elements.start_btn.addClass('disabled');
+				elements.url.stop().animate({
+					opacity:0.0
+				},300);
 				return;
 			}
 			if(append_random){
@@ -64,7 +69,6 @@
 			},300);
 			newTimerId = tempTimerId;
 			elements.url_id.text(newTimerId);
-			elements.start_btn.addClass('disabled');
 			if(newTimerId.length){
 				elements.url_id_loader.show();
 				lookup_timer = setTimeout(function(){
