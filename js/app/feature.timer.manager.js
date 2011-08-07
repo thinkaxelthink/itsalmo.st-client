@@ -37,7 +37,7 @@
 				return;
 			}
 			$.ajax({
-				url:'/timer/'+id.toLowerCase(),
+				url:'/'+app.page.env.server_name+'/timer/'+id.toLowerCase(),
 				type:'GET',
 				success:function(data, textStatus, jqXHR){
 					if(!data.length){
@@ -59,7 +59,7 @@
 			}
 			timer.expires = timer.expires.getTime();
 			$.ajax({
-				url:'/timer/'+id.toLowerCase(),
+				url:'/'+app.page.env.server_name+'/timer/'+id.toLowerCase(),
 				type:'POST',
 				data:timer,
 				success:function(data, textStatus, jqXHR){

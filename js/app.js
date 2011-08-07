@@ -33,6 +33,7 @@ jQuery(document).bind('ready',function(){
 tc.app = function(page){
 	var me;
 	me = this;
+	this.page = page;
 	this.events = $({});
 	this.init(page);
 };
