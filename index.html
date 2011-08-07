@@ -15,8 +15,8 @@
 			<script type="text/javascript">try{Typekit.load();}catch(e){}</script>
 			
 			<script type='text/javascript'>
-				//  Create a page. If we have any dynamically generated that needs to
-				//  be consumed by JS, we can insert it into the page object.
+				//  Create a page. If we have any dynamically generated content that needs to
+				//  be consumed by the client App, we can insert it into the page object.
 				var page = {
 					features:[]
 				};
@@ -28,19 +28,20 @@
 			
 			<div class='content'>
 				
-				<div class='pane start-pane'>
+				<div class='pane start-pane' style='display:none'>
 					<div class='tier countdown-name'>
-						<label for='countdown-name'>It's almost</label>
+						<label class='its-almost' for='countdown-name'>It's almost</label>
 						<input id='countdown-name' id='countdown-name' type='text' value=''/>
 					</div>
+					<p class='url'>URL: http://itsalmo.st/#<span class='url_id'>&nbsp;</span><img class='url_id_loader' style='display:none;' src='img/loader_16.gif'></img></p>
 					<div class='tier countdown-details'>
 						<label for='countdown-date'>on</label>
-						<input id='countdown-date' name='countdown-date' type='text' value=''/>
+						<input id='countdown-date' name='countdown-date' type='text' value='8/7/11'/>
 						<label for='countdown-hour'>at</label>
-						<input id='countdown-hour' name='countdown-hour' class='time-component' type='text' value=''/>
+						<input id='countdown-hour' name='countdown-hour' class='time-component' type='text' value='3'/>
 						<span class='input-sep'>:</span>
-						<input id='countdown-minutes' name='countdown-minutes' class='time-component' type='text' value=''/>
-						<input id='countdown-timeperiod' name='countdown-timeperiod' class='time-component' type='text' value=''/>
+						<input id='countdown-minutes' name='countdown-minutes' class='time-component' type='text' value='00'/>
+						<input id='countdown-timeperiod' name='countdown-timeperiod' class='time-component' type='text' value='pm'/>
 					</div>
 					<div class='tier'>
 						<a id='start-btn' class='btn' href='#'>
@@ -49,18 +50,29 @@
 					</div>
 				</div>
 				
-				<div class='pane timer-pane'>
-					<p class='description' style='display:none;'>It's Almost <span>&nbsp;</span></p>
-					<p class='timer'></p>
+				<div class='pane timer-pane' style='display:none'>
+					<p class='description'>It's Almost <span class='name'>&nbsp;</span></p>
+					<p class='timer'>
+						<span class='days'></span> days :
+						<span class='hours'></span> hours :
+						<span class='minutes'></span> minutes :
+						<span class='seconds'></span> seconds
+						<span class='milliseconds'></span>
+					</p>
 				</div>
 				
-				<div class='pane share-pane'></div>
+				<div class='pane share-pane' style='display:none'></div>
 			</div>
 			
 			<div class='footer'>
 				<div class='tier'>
-					<div class='social'>
-						
+					<div class='social' style='opacity:0.0;'>
+						<a href='#'>
+							<span>Share This Countdown</span>
+						</a>
+						<a href='#'>
+							<span>Make a New Countdown</span>
+						</a>
 					</div>
 					<div class='logo'>
 						<a href='http://typeslashcode.com'>
@@ -93,7 +105,8 @@
 			<script type='text/javascript' src='./js/app/feature.hashchange.js'></script>
 			<script type='text/javascript' src='./js/app/feature.timer.manager.js'></script>
 			<script type='text/javascript' src='./js/app/feature.timer.view.js'></script>
-			<script type='text/javascript' src='./js/app/feature.timer.create.js'></script>
+			<script type='text/javascript' src='./js/app/feature.timer.form.js'></script>
+			<script type='text/javascript' src='./js/app/feature.footer.js'></script>
 			
 			<script type='text/javascript'>
 				

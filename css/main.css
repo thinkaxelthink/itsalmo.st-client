@@ -6,7 +6,17 @@ body { font-family: omnes-pro; color:#8e8b8a; }
 .tier:after { clear:both; }
 .tier { zoom:1; }
 
-.content { width:800px; margin:300px auto 0; text-align:left; }
+a{
+  color:#8e8b8a; text-decoration:none;
+}
+a:hover {
+  color:#8e8b8a;text-decoration:underline;
+}
+a:visited{
+  color:#8e8b8a;
+}
+
+.content { width:800px; margin:12% auto 0; text-align:left; }
 
 .pane p { font-size:40px; }
 
@@ -27,17 +37,30 @@ body { font-family: omnes-pro; color:#8e8b8a; }
 
 .input-sep { display:block; float:left; }
 
-.start-pane .tier { margin:100px 0 0; }
+.start-pane .tier { text-align:center; margin:100px 0 0; }
 .start-pane .tier:first-child { margin-top:0; }
-
 .start-pane #countdown-date { width:240px; }
+.start-pane label.its-almost { width:225px; }
+.start-pane p.url { margin-left:285px; font-weight:300; font-size:26px; margin-top:15px; }
+.start-pane p img { margin-left:5px; }
+
+.timer-pane { }
+.timer-pane .description { text-align:center;font-weight:300; font-size:60px;
+  margin-bottom:40px; }
+.timer-pane .description span.name { font-weight:600; }
+.timer-pane .timer { font-weight:300; }
+.timer-pane .timer span { font-weight:600;}
+.timer-pane .timer span.milliseconds { font-size:0.5em; color:#ccc7c6;}
+
 
 .footer { position:fixed; bottom:0; width:100%; text-align:left; background-color:#f0efee; }
 .footer .tier { padding:20px 30px; }
 
-.footer .social { float:left; }
+.footer .social { text-align:center;width:100%; font-size:16px; padding-top:0px; }
+.footer .social a { margin-left:10px; font-weight:600; }
+.footer .social a:first-child { margin-left:0px; }
 
-.footer .logo { float:right; }
+.footer .logo { position:absolute; right:30px; top:20px; }
 .footer .logo a { display:block; width:92px; height:27px; background-image:url("../img/tc_logo.png"); }
 .footer .logo a span { display:none; }
 
@@ -74,3 +97,6 @@ a.btn:active { -webkit-box-shadow:1px 1px 3px rgba(0,0,0,0.35); -moz-box-shadow:
 	filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#969594', endColorstr='#afafae',GradientType=0 ); /* IE6-9 */
 	background: linear-gradient(top, #969594 0%,#a5a4a4 49%,#a8a8a8 50%,#afafae 100%); /* W3C */
 	}
+a.btn.disabled {
+  opacity:0.5;
+}

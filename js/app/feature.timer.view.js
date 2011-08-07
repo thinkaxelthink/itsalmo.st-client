@@ -13,28 +13,49 @@
 		dom = $('.pane.timer-pane');
 		
 		function cycle(){
-			update_display();
-			timeout = setTimeout(cycle,1000);
+			render.display();
+			timeout = setTimeout(cycle,25);
 		};
 		
-		function update_display(){
-			if(!timer){ return false; }
-			var diff;
-			diff = timer.expires.getTime() - Date.now();
-			$('.description span').text(timer.title);
-			$('.description').show();
-			$('.timer').text(diff);
-		};
+		var render = {
+			loading:function(){
+				$('.description span').text('loading');
+			},
+			display:function(){
+				if(!timer){ return false; }
+				var diff;
+				diff = timer.expires - Date.now();
+				if(timer.name != $('.description span').text()){
+					$('.description span').text(timer.name);
+				}
+				$('.timer .milliseconds').text(Math.floor((diff%1000)));
+				$('.timer .seconds').text(Math.floor((diff/1000)%60));
+				$('.timer .minutes').text(Math.floor((diff/1000/60)%60));
+				$('.timer .hours').text(Math.floor((diff/1000/60/60)%24));
+				$('.timer .days').text(Math.floor(diff/1000/60/60/24));
+			}
+		}
 		
 		app.events.bind('timer.manager.timerLoaded',function(e,d){
-			dom.show();
 			timer = d;
+			if(timeout){
+				clearTimeout(timeout);
+			}
+			cycle();
 		});
 		
 		app.events.bind('timer.manager.noTimerLoaded',function(e,d){
-			dom.hide();
 			if(timeout){
 				clearTimeout(timeout);
+			}
+		});
+		
+		app.events.bind('hashchange.hashChanged',function(e,d){
+			if(!d.hash.length){
+				dom.hide();
+			} else {
+				dom.show();
+				render.loading();
 			}
 		});
 		
