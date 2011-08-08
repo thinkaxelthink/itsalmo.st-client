@@ -22,11 +22,12 @@ a:visited{
 
 .pane label { 
 	display:block; float:left; padding:0 25px; 
-	font-size:48px; 
+	font-size:40px; 
+	font-weight:300;
 }
 .pane input[type=text] { 
-	display:block; float:left; width:400px; padding:0px 15px 5px 15px; font-family: omnes-pro; font-weight:500;
-	font-size:48px; border:1px solid #e0e0e0; outline:0; color:#8e8b8a; -moz-box-shadow:inset 0px 0px 20px rgba(0,0,0,0.2);
+	display:block; float:left; width:400px; padding:0px 15px 5px 15px; font-family: omnes-pro; font-weight:600;
+	font-size:40px; border:1px solid #e0e0e0; outline:0; color:#8e8b8a; -moz-box-shadow:inset 0px 0px 20px rgba(0,0,0,0.2);
 	-webkit-box-shadow:inset 0px 0px 20px rgba(0,0,0,0.2); box-shadow:inset 0px 0px 20px rgba(0,0,0,0.2); -moz-border-radius:3px;
 	-webkit-border-radius:3px; border-radius:3px;
 }
@@ -36,7 +37,7 @@ a:visited{
 	box-shadow:0 0 15px #5bb7eb, inset 0px 0px 20px rgba(0,0,0,0.2);
 	border:1px solid #84cef5;
 }
-.pane input[type=text].time-component { width:55px; }
+.pane input[type=text].time-component { width:51px; text-align: center;}
 
 .input-sep { display:block; float:left; font-family: omnes-pro; font-weight:300; margin: 0 10px; font-size:48px;}
 
@@ -44,10 +45,13 @@ a:visited{
 #countdown-timeperiod {width:65px;}
 
 .start-pane .tier { text-align:center; margin:60px 0 0; }
+.start-pane .tier.countdown-details { margin-top: 20px; }
 .start-pane .tier:first-child { margin-top:0; text-align:center;}
-.start-pane #countdown-date { width:240px; }
-.start-pane label.its-almost { width:225px; }
-.start-pane p.url { margin:15px 0 0 296px; font-weight:300; font-size:24px; color:#b9b6b5; }
+.start-pane #countdown-date { width:200px; text-align: center; }
+.start-pane label.its-almost { width:270px; font-size: 60px;}
+.start-pane input[type=text]#countdown-name { font-size: 60px; }
+.start-pane input[type=text] { position: relative; top: -4px; }
+.start-pane p.url { margin:0px 0 0 338px; font-weight:300; font-size:18px; color:#b9b6b5; }
 .start-pane p img { margin-left:5px; }
 
 .timer-pane { }
@@ -106,3 +110,5 @@ a.btn:active { -webkit-box-shadow:1px 1px 3px rgba(0,0,0,0.35); -moz-box-shadow:
 a.btn.disabled {
   opacity:0.5;
 }
+
+.spacer { display: inline-block; width: 2px; }
