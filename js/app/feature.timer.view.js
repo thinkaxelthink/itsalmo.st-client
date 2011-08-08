@@ -5,7 +5,16 @@
 				moduleName:'Feature(Timer.View)',
 				enabled:true
 			});
-			
+	
+	
+	// fix for IE Date.now as per:
+	// https://developer.mozilla.org/en/JavaScript/Reference/Global_Objects/Date/now
+	if (!Date.now) {
+		Date.now = function now() {
+			return +new Date();
+		};
+	}
+	
 	page.features.push(function(app){
 		
 		var timer, dom, timeout;
