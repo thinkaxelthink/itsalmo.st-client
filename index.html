@@ -132,8 +132,9 @@
 					os = 'ipad';
 					isiPad = true;
 				}
-
-				tc.jQ('body').addClass(os);
+				if(os){
+					tc.jQ('body').addClass(os);
+				}
 			</script>
 			
 	</body>
