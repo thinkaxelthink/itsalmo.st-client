@@ -113,7 +113,12 @@
 			<script type='text/javascript' src='./js/app/feature.footer.js'></script>
 			
 			<script type='text/javascript'>
-				
+				if (navigator.userAgent.match(/iPad/i) != null) {
+					os = 'ipad';
+					isiPad = true;
+				}
+
+				tc.jQ('body').addClass(os);
 			</script>
 			
 	</body>
