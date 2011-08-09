@@ -16,7 +16,7 @@ a:visited{
   color:#8e8b8a;
 }
 
-.content { width:800px; margin:7% auto 0; text-align:left; }
+.content { width:100%; margin:0 auto 0; text-align:left; }
 
 .pane p { font-size:40px; }
 
@@ -46,14 +46,20 @@ a:visited{
 #countdown-minutes {margin-right:15px;}
 #countdown-timeperiod {width:65px;}
 
-.start-pane .tier { text-align:center; margin:60px 0 0; }
+.start-pane,
+.timer-pane { position: absolute; top: 7%; left: 0; right: 0; }
+
+.start-pane .tier { text-align:center; margin:60px auto 0;}
+.start-pane .tier,
+.start-pane p.url { width: 750px; }
 .start-pane .tier.countdown-details { margin-top: 26px; }
 .start-pane .tier:first-child { margin-top:0; text-align:center;}
 .start-pane #countdown-date { width:200px; text-align: center; }
-.start-pane label.its-almost { width:270px; font-size: 60px;}
-.start-pane input[type=text]#countdown-name { font-size: 60px; z-index: 5; }
+.start-pane label.its-almost { width:275px; font-size: 60px; text-align: right; padding-left: 0; white-space: nowrap;}
+.start-pane input[type=text]#countdown-name { font-size: 60px; z-index: 5; width: 385px;}
 .start-pane input[type=text] { position: relative; top: -4px; }
-.start-pane p.url { margin:0px 0 0 332px; font-weight:300; font-size:18px; color:#b9b6b5; position: relative; width: 418px; max-height: 25px; white-space: nowrap; overflow: hidden;}
+.start-pane p.url { margin:0px auto 0; font-weight:300; font-size:18px; color:#b9b6b5; max-height: 25px; white-space: nowrap; overflow: hidden; display: block;}
+.start-pane p.url .membrane { display: block; margin-left: 312px; width: 405px; overflow: hidden; position: relative;}
 .start-pane p img { margin-left:5px; }
 .start-pane p.url .gradient { 
 	right: 0; top: 0; bottom: 0; width: 15px; display: block; position: absolute; z-index: 1;
