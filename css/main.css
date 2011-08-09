@@ -16,7 +16,7 @@ a:visited{
   color:#8e8b8a;
 }
 
-.content { width:800px; margin:7% auto 0; text-align:left; }
+.content { width:100%; margin:7% auto 0; text-align:left; }
 
 .pane p { font-size:40px; }
 
@@ -69,7 +69,7 @@ a:visited{
 .timer-pane { }
 .timer-pane .description { text-align:center;font-weight:300; font-size:60px; word-break: break-word;
   margin-bottom:40px; line-height: 68px; }
-.timer-pane .description span.name { font-weight:600; }
+.timer-pane .description span.qualified { font-weight:600; }
 .timer-pane .timer { font-weight:300; text-align: center; margin-left: 10px;}
 .timer-pane .timer span { font-weight:600;}
 .timer-pane .timer .seconds-container { min-width: 260px; font-weight: 300; text-align: left; display: inline-block;}
@@ -138,9 +138,9 @@ a.btn.disabled {
 
 .spacer { display: inline-block; width: 2px; }
 
-body.ipad .tier.countdown-name input[type="text"] { background-image: -webkit-gradient(
+body.broswer-ipad .tier.countdown-name input[type="text"] { background-image: -webkit-gradient(
 	radial, 50% 50%, 190, 50% 50%, 500, from(rgba(0,0,0,0)), to(rgba(0,0,0,.5))
 );}
-body.ipad .tier.countdown-details input[type="text"] { background-image: -webkit-gradient(
+body.broswer-ipad .tier.countdown-details input[type="text"] { background-image: -webkit-gradient(
 	radial, 50% 50%, 125, 50% 50%, 250, from(rgba(0,0,0,0)), to(rgba(0,0,0,.5))
 );}

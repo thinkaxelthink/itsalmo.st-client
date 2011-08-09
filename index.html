@@ -10,8 +10,8 @@
 			
 			<link rel="stylesheet" href="./css/main.css" type="text/css" media="screen" charset="utf-8" />
 			
-			<link rel="icon" href="/img/favicon-animated.gif" type="image/gif"/> 
-			<link rel="shortcut icon" href="/img/favicon-animated.gif" type="image/gif"/>
+			<link id='favicon_0' rel="icon" href="./img/favicon-static.gif" type="image/gif"/> 
+			<link id='favicon_1' rel="shortcut icon" href="./img/favicon-static.gif" type="image/gif"/>
 			
 			<!-- Load TypeKit -->
 			<script type="text/javascript" src="http://use.typekit.com/mfg7yeo.js"></script>
@@ -50,7 +50,7 @@
 				<div class='pane start-pane' style='display:none'>
 					<div class='tier countdown-name'>
 						<label class='its-almost' for='countdown-name'>It's almost</label>
-						<input id='countdown-name' id='countdown-name' type='text' value=''/>
+						<input id='countdown-name' type='text' value=''/>
 					</div>
 					<p class='url'>URL: http://itsalmo.st/#<span class='url_id'>&nbsp;</span><img class='url_id_loader' style='display:none;' src='img/loader_16.gif'></img><span class="gradient"></span></p>
 					<div class='tier countdown-details'>
@@ -70,15 +70,15 @@
 				</div>
 				
 				<div class='pane timer-pane' style='display:none'>
-					<p class='description'>It's almost <span class='name'>&nbsp;</span></p>
+					<p class='description'><span class='qualifier'>It's almost</span> <span class='qualified'>&nbsp;</span></p>
 					<p class='timer'>
-						<span class='days'></span> days <span class="spacer"></span>
-						<span class='hours'></span> hours <span class="spacer"></span>
-						<span class='minutes'></span> minutes <span class="spacer"></span>
-						<span class='seconds-container'>
-							<span class='seconds'></span> seconds <span class="spacer"></span>
+						<span><span class='days'></span>&nbsp;days <span class="spacer"></span></span>
+						<span><span class='hours'></span>&nbsp;hours <span class="spacer"></span></span>
+						<span><span class='minutes'></span>&nbsp;minutes <span class="spacer"></span></span>
+						<span><span class='seconds-container'>
+							<span class='seconds'></span>&nbsp;seconds <span class="spacer"></span>
 							<span class='milliseconds'></span>
-						</span>
+						</span></span>
 					</p>
 				</div>
 				
@@ -129,16 +129,7 @@
 			<script type='text/javascript' src='./js/app/feature.timer.view.js'></script>
 			<script type='text/javascript' src='./js/app/feature.timer.form.js'></script>
 			<script type='text/javascript' src='./js/app/feature.footer.js'></script>
-			
-			<script type='text/javascript'>
-				if (navigator.userAgent.match(/iPad/i) != null) {
-					os = 'ipad';
-					isiPad = true;
-				}
-				if(os){
-					tc.jQ('body').addClass(os);
-				}
-			</script>
+			<script type='text/javascript' src='./js/app/feature.browser-detection.js'></script>
 			
 	</body>
 	

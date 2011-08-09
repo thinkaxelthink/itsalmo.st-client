@@ -145,6 +145,7 @@
 			if(!d.hash.length){
 				clear_form();
 				dom.show();
+				document.title = 'It\'s Almost';
 			} else {
 				newTimerId = null;
 				dom.hide();
