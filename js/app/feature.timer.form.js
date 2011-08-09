@@ -116,7 +116,6 @@
 			
 		};
 		
-		
 		elements.name.bind('change keyup',function(e,d){
 			generate_id(elements.name.val());
 		});
