@@ -159,6 +159,20 @@
 				});
 			}
 		});
+	
+		/* handle the hiding/showing of the empty state text for countdown name */
+		tc.jQ('.countdown-name-empty-overlay').click(function() {
+			tc.jQ('#countdown-name').focus();
+		});
+		tc.jQ('#countdown-name').focus(function() {
+			tc.jQ('.countdown-name-empty-overlay').fadeOut(150);
+		});
+		tc.jQ('#countdown-name').blur(function() {
+			if (tc.jQ(this).val() == '') {
+				tc.jQ('.countdown-name-empty-overlay').fadeIn(150);
+			}
+		});
+	
 	});
 	
 })(this);

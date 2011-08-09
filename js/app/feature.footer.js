@@ -27,6 +27,17 @@
 				},500);
 			}
 		});
+		
+		/* handle modal hiding and showing */
+		tc.jQ('#share-btn').click(function() {
+			tc.jQ('.modal-overlay').fadeIn(600);
+			tc.jQ('.modal-container').delay(400).fadeIn(600);
+		});
+		tc.jQ('#share-done-btn, .modal-overlay').click(function() {
+			tc.jQ('.modal-container').fadeOut(250);
+			tc.jQ('.modal-overlay').delay(150).fadeOut(400);
+		});
+		
 	});
 	
 })(this);
