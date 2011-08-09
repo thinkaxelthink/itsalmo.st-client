@@ -35,7 +35,7 @@
 		};
 		
 		function post_timer(id,timer){
-			if(!id.length){
+			if(!id || !id.length){
 				return;
 			}
 			timer.expires = timer.expires.getTime();

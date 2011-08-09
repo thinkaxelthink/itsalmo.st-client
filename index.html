@@ -10,8 +10,8 @@
 			
 			<link rel="stylesheet" href="./css/main.css" type="text/css" media="screen" charset="utf-8" />
 			
-			<link id='favicon_0' rel="icon" href="./img/favicon-static.gif" type="image/gif"/> 
-			<link id='favicon_1' rel="shortcut icon" href="./img/favicon-static.gif" type="image/gif"/>
+			<link rel="icon" href="./img/favicon-static.gif" type="image/gif"/> 
+			<link rel="shortcut icon" href="./img/favicon-static.gif" type="image/gif"/>
 			
 			<!-- Load TypeKit -->
 			<script type="text/javascript" src="http://use.typekit.com/mfg7yeo.js"></script>
@@ -52,7 +52,7 @@
 						<label class='its-almost' for='countdown-name'>It's almost</label>
 						<input id='countdown-name' type='text' value=''/>
 					</div>
-					<p class='url'>URL: http://itsalmo.st/#<span class='url_id'>&nbsp;</span><img class='url_id_loader' style='display:none;' src='img/loader_16.gif'></img><span class="gradient"></span></p>
+					<p class='url'><span class="membrane">URL: http://itsalmo.st/#<span class='url_id'>&nbsp;</span><img class='url_id_loader' style='display:none;' src='img/loader_16.gif'></img><span class="gradient"></span></span></p>
 					<div class='tier countdown-details'>
 						<label for='countdown-date'>on</label>
 						<input id='countdown-date' name='countdown-date' type='text' value='8/7/11'/>
@@ -115,21 +115,23 @@
 			
 			<!-- Type/Code Libraries -->
 			<script type='text/javascript' src='./js/lib/typecode-js/tc.seed.js'></script>
-			<script type='text/javascript' src='./js/lib/typecode-js/tc.logging.js'></script>
 			<script type='text/javascript' src='./js/lib/typecode-js/tc.overlay.js'></script>
 			<script type='text/javascript' src='./js/lib/typecode-js/tc.tooltip.js'></script>
 			<script type='text/javascript' src='./js/lib/typecode-js/tc.animator.js'></script>
+			<script type='text/javascript' src='./js/lib/typecode-js/tc.favicon.js'></script>
+			<script type='text/javascript' src='./js/lib/typecode-js/tc.browser_detection.js'></script>
 
 			<!-- Application -->
 			<script type='text/javascript' src='./js/app.js'></script>
 			
 			<!-- Application Features -->
+			<script type='text/javascript' src='./js/app/feature.browser_detection.js'></script>
 			<script type='text/javascript' src='./js/app/feature.hashchange.js'></script>
 			<script type='text/javascript' src='./js/app/feature.timer.manager.js'></script>
 			<script type='text/javascript' src='./js/app/feature.timer.view.js'></script>
 			<script type='text/javascript' src='./js/app/feature.timer.form.js'></script>
 			<script type='text/javascript' src='./js/app/feature.footer.js'></script>
-			<script type='text/javascript' src='./js/app/feature.browser-detection.js'></script>
+			
 			
 	</body>
 	

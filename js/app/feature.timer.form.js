@@ -142,13 +142,22 @@
 		});
 		
 		app.events.bind('hashchange.hashChanged',function(e,d){
+			
 			if(!d.hash.length){
 				clear_form();
-				dom.show();
 				document.title = 'It\'s Almost';
+				dom.stop().css('opacity',0.0).show().animate({
+					opacity:1.0
+				},500,function(){
+					
+				});
 			} else {
 				newTimerId = null;
-				dom.hide();
+				dom.stop().animate({
+					opacity:0.0
+				},500,function(){
+					$(this).hide();
+				});
 			}
 		});
 	});

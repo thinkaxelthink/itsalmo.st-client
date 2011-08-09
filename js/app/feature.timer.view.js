@@ -17,13 +17,13 @@
 	
 	page.features.push(function(app){
 		
-		var timer, dom, timeout, elements;
+		var timer, favicon, dom, timeout, elements;
+		
+		favicon = new NI.Favicon({});
 		
 		dom = $('.pane.timer-pane');
 		
 		elements = {
-			favicon_0:$('#favicon_0'),
-			favicon_1:$('#favicon_1'),
 			qualifier:dom.find('.description span.qualifier'),
 			qualified:dom.find('.description span.qualified'),
 			timer:dom.find('.timer'),
@@ -45,13 +45,12 @@
 				
 			},
 			start:function(){
+				favicon.setFavicon("./img/favicon-static.gif");
 				elements.qualifier.text('It\'s almost');
 				elements.timer.show();
 				elements.minutes.parent().show();
 				elements.hours.parent().show();
 				elements.days.parent().show();
-				elements.favicon_0.attr('href','./img/favicon-static.gif');
-				elements.favicon_1.attr('href','./img/favicon-static.gif');
 			},
 			display:function(){
 				var diff, time_exploded;
@@ -100,19 +99,16 @@
 				return true;
 			},
 			expired:function(){
+				favicon.setFavicon("./img/favicon-animated.gif");
 				elements.qualifier.text('It is');
 				document.title = 'It\'s ' + timer.name;
 				elements.timer.hide();
-				elements.favicon_0.attr('href','./img/favicon-animated.gif');
-				elements.favicon_1.attr('href','./img/favicon-animated.gif');
 			}
 		}
 		
 		app.events.bind('timer.manager.timerLoaded',function(e,d){
 			timer = d;
-			if(timeout){
-				clearTimeout(timeout);
-			}
+			if(timeout){ clearTimeout(timeout); }
 			if(dom.filter(':visible').length){
 				document.title = 'It\'s Almost ' + timer.name;
 			}
@@ -128,7 +124,6 @@
 		
 		app.events.bind('hashchange.hashChanged',function(e,d){
 			if(!d.hash.length){
-				//dom.hide();
 				dom.stop().animate({
 					opacity:0.0
 				},500,function(){
@@ -136,7 +131,6 @@
 					$(this).hide();
 				});
 			} else {
-				//dom.show();
 				render.start();
 				dom.stop().css('opacity',0.0).show().animate({
 					opacity:1.0
