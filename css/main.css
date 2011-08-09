@@ -69,8 +69,12 @@ a:visited{
 .timer-pane .description { text-align:center;font-weight:300; font-size:60px; word-break: break-word;
   margin-bottom:40px; line-height: 68px; }
 .timer-pane .description span.qualified { font-weight:600; }
-.timer-pane .timer { font-weight:300; text-align: center; margin-left: 10px;}
-.timer-pane .timer span { font-weight:600;}
+.timer-pane .timer { font-weight:300; text-align: center; margin-left: 10px; line-height: 46px;}
+.timer-pane .timer span.days,
+.timer-pane .timer span.hours,
+.timer-pane .timer span.minutes,
+.timer-pane .timer span.seconds,
+.timer-pane .timer span.milliseconds { font-weight:600;}
 .timer-pane .timer .seconds-container { min-width: 260px; font-weight: 300; text-align: left; display: inline-block;}
 .timer-pane .timer .seconds-container span { font-weight: 600;}
 .timer-pane .timer span.milliseconds { font-size:0.5em; color:#ccc7c6; display: inline-block; text-align: left; width: 40px;}

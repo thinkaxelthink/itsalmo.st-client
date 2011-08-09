@@ -3,6 +3,7 @@
 	<head>
 			<title>It's Almost</title>
 			
+			<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
 			
 			<link rel="stylesheet" href="./css/lib/typecode-css/reset.css" type="text/css" media="screen" charset="utf-8" />
 			<link rel="stylesheet" href="./css/lib/typecode-css/overlay.css" type="text/css" media="screen" charset="utf-8" />
@@ -164,6 +165,22 @@
 			<script type='text/javascript' src='./js/app/feature.timer.form.js'></script>
 			<script type='text/javascript' src='./js/app/feature.footer.js'></script>
 			
+			<script>
+				tc.jQ('.countdown-name-empty-overlay').click(function() {
+					tc.jQ('#countdown-name').focus();
+				});
+				
+				tc.jQ('#countdown-name').focus(function() {
+					tc.jQ('.countdown-name-empty-overlay').fadeOut(150);
+				});
+
+				tc.jQ('#countdown-name').blur(function() {
+					if (tc.jQ(this).val() == '') {
+						tc.jQ('.countdown-name-empty-overlay').fadeIn(150);
+					}
+				});
+		
+			</script>
 			
 	</body>
 	
