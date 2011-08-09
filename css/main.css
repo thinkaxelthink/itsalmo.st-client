@@ -67,11 +67,13 @@ a:visited{
 	}
 
 .timer-pane { }
-.timer-pane .description { text-align:center;font-weight:300; font-size:60px;
+.timer-pane .description { text-align:center;font-weight:300; font-size:60px; word-break: break-word;
   margin-bottom:40px; line-height: 68px; }
 .timer-pane .description span.name { font-weight:600; }
-.timer-pane .timer { font-weight:300; text-align: center; }
+.timer-pane .timer { font-weight:300; text-align: center; margin-left: 10px;}
 .timer-pane .timer span { font-weight:600;}
+.timer-pane .timer .seconds-container { min-width: 260px; font-weight: 300; text-align: left; display: inline-block;}
+.timer-pane .timer .seconds-container span { font-weight: 600;}
 .timer-pane .timer span.milliseconds { font-size:0.5em; color:#ccc7c6; display: inline-block; text-align: left; width: 40px;}
 
 
@@ -86,6 +88,16 @@ a:visited{
 .footer .logo { position:absolute; right:30px; top:20px; }
 .footer .logo a { display:block; width:92px; height:27px; background-image:url("../img/tc_logo.png"); position: relative; top: -2px;}
 .footer .logo a span { display:none; }
+
+.footer .gradient { 
+	right: 0; top: -20px; left: 0; height: 19px; display: block; position: absolute; z-index: 1;
+	background: -moz-linear-gradient(top, rgba(255,255,255,0) 0%, rgba(255,255,255,1) 100%); /* FF3.6+ */
+	background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,rgba(255,255,255,0)), color-stop(100%,rgba(255,255,255,1))); /* Chrome,Safari4+ */
+	background: -webkit-linear-gradient(top, rgba(255,255,255,0) 0%,rgba(255,255,255,1) 100%); /* Chrome10+,Safari5.1+ */
+	background: -o-linear-gradient(top, rgba(255,255,255,0) 0%,rgba(255,255,255,1) 100%); /* Opera11.10+ */
+	background: -ms-linear-gradient(top, rgba(255,255,255,0) 0%,rgba(255,255,255,1) 100%); /* IE10+ */
+	background: linear-gradient(top, rgba(255,255,255,0) 0%,rgba(255,255,255,1) 100%); /* W3C */ 
+	}
 
 a.btn { padding: 5px 25px 15px 25px; -webkit-border-radius:3px; -moz-border-radius:3px; border-radius:3px; font-size:36px; font-weight:600; color:#FFF; text-decoration:none; display:inline-block; text-shadow:-1px -1px 1px rgba(94,91,91,0.45); border:1px solid #a0a09f; -webkit-box-shadow:1px 1px 3px rgba(0,0,0,0.35); -moz-box-shadow:1px 1px 3px rgba(0,0,0,0.35); box-shadow:1px 1px 3px rgba(0,0,0,0.35); cursor:pointer; position:relative;
 	/* SHIT-TON OF GRADIENT STUFF */
