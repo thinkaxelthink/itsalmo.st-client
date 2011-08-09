@@ -47,22 +47,32 @@ a:visited{
 #countdown-timeperiod {width:65px;}
 
 .start-pane .tier { text-align:center; margin:60px 0 0; }
-.start-pane .tier.countdown-details { margin-top: 20px; }
+.start-pane .tier.countdown-details { margin-top: 26px; }
 .start-pane .tier:first-child { margin-top:0; text-align:center;}
 .start-pane #countdown-date { width:200px; text-align: center; }
 .start-pane label.its-almost { width:270px; font-size: 60px;}
-.start-pane input[type=text]#countdown-name { font-size: 60px; }
+.start-pane input[type=text]#countdown-name { font-size: 60px; z-index: 5; }
 .start-pane input[type=text] { position: relative; top: -4px; }
-.start-pane p.url { margin:0px 0 0 338px; font-weight:300; font-size:18px; color:#b9b6b5; }
+.start-pane p.url { margin:0px 0 0 332px; font-weight:300; font-size:18px; color:#b9b6b5; position: relative; width: 418px; max-height: 25px; white-space: nowrap; overflow: hidden;}
 .start-pane p img { margin-left:5px; }
+.start-pane p.url .gradient { 
+	right: 0; top: 0; bottom: 0; width: 15px; display: block; position: absolute; z-index: 1;
+	background: -moz-linear-gradient(left, rgba(255,255,255,0) 0%, rgba(255,255,255,1) 100%); /* FF3.6+ */
+	background: -webkit-gradient(linear, left top, right top, color-stop(0%,rgba(255,255,255,0)), color-stop(100%,rgba(255,255,255,1))); /* Chrome,Safari4+ */
+	background: -webkit-linear-gradient(left, rgba(255,255,255,0) 0%,rgba(255,255,255,1) 100%); /* Chrome10+,Safari5.1+ */
+	background: -o-linear-gradient(left, rgba(255,255,255,0) 0%,rgba(255,255,255,1) 100%); /* Opera11.10+ */
+	background: -ms-linear-gradient(left, rgba(255,255,255,0) 0%,rgba(255,255,255,1) 100%); /* IE10+ */
+	filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#00ffffff', endColorstr='#ffffff',GradientType=1 ); /* IE6-9 */
+	background: linear-gradient(left, rgba(255,255,255,0) 0%,rgba(255,255,255,1) 100%); /* W3C */ 
+	}
 
 .timer-pane { }
 .timer-pane .description { text-align:center;font-weight:300; font-size:60px;
-  margin-bottom:40px; }
+  margin-bottom:40px; line-height: 68px; }
 .timer-pane .description span.name { font-weight:600; }
-.timer-pane .timer { font-weight:300; }
+.timer-pane .timer { font-weight:300; text-align: center; }
 .timer-pane .timer span { font-weight:600;}
-.timer-pane .timer span.milliseconds { font-size:0.5em; color:#ccc7c6;}
+.timer-pane .timer span.milliseconds { font-size:0.5em; color:#ccc7c6; display: inline-block; text-align: left; width: 40px;}
 
 
 .footer { position:fixed; bottom:0; width:100%; text-align:left; background-color:#f0efee; border-top:1px solid #eaeaea;}
