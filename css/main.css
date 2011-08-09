@@ -76,8 +76,8 @@ a:visited{
 .timer-pane .timer span.milliseconds { font-size:0.5em; color:#ccc7c6; display: inline-block; text-align: left; width: 40px;}
 
 .share-pane {}
-.share-pane .modal-overlay { position: absolute; z-index: 18; background-color: #2D2C2C; top: 0; left: 0; bottom: 0; right: 0; opacity: .35; -moz-box-shadow:inset 0px 0px 100px rgba(0,0,0,1); -webkit-box-shadow:inset 0px 0px 100px rgba(0,0,0,1); box-shadow:inset 0px 0px 100px rgba(0,0,0,1); }
-.share-pane .modal-container { position: absolute; top: 7%; left: 0; right: 0; z-index: 19;}
+.share-pane .modal-overlay { position: absolute; z-index: 60; background-color: #2D2C2C; top: 0; left: 0; bottom: 0; right: 0; opacity: .35; -moz-box-shadow:inset 0px 0px 100px rgba(0,0,0,1); -webkit-box-shadow:inset 0px 0px 100px rgba(0,0,0,1); box-shadow:inset 0px 0px 100px rgba(0,0,0,1); }
+.share-pane .modal-container { position: absolute; top: 7%; left: 0; right: 0; z-index: 61;}
 .share-pane .modal { background-color: #fff; position: relative; width: 450px; text-align: center; padding: 55px 50px; margin: 0 auto 0; overflow: hidden; white-space: nowrap; -webkit-border-radius:5px; -moz-border-radius:5px; border-radius:5px; -webkit-box-shadow:1px 1px 20px rgba(0,0,0,0.35); -moz-box-shadow:1px 1px 20px rgba(0,0,0,0.35); box-shadow:1px 1px 20px rgba(0,0,0,0.35);}
 .share-pane ul { margin-bottom: 40px; overflow: hidden; max-width: 450px;}
 .share-pane ul a { display: block; text-align: left; margin-bottom: 30px; font-size: 29px; line-height: 1; font-weight: 400;}
@@ -99,7 +99,7 @@ a:visited{
 .share-pane table td.icon { font-weight: 300; width: 75px; max-width: 75px; min-width: 75px; text-align: left; }
 .share-pane table td.text { width: 375px; max-width: 375px; overflow: hidden; }*/
 
-.footer { position:fixed; bottom:0; width:100%; text-align:left; background-color:#f0efee; border-top:1px solid #eaeaea; z-index: 17;}
+.footer { position:fixed; bottom:0; width:100%; text-align:left; background-color:#f0efee; border-top:1px solid #eaeaea; z-index: 51;}
 .footer .tier { padding:17px 30px 22px; }
 
 .footer .social { text-align:center;width:100%; font-size:16px; padding-top:0px; }
