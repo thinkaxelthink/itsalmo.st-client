@@ -51,8 +51,9 @@
 					<div class='tier countdown-name'>
 						<label class='its-almost' for='countdown-name'>It's almost</label>
 						<input id='countdown-name' type='text' value=''/>
+						<div class='countdown-name-empty-overlay'>event title</div>
 					</div>
-					<p class='url'><span class="membrane">URL: http://itsalmo.st/#<span class='url_id'>&nbsp;</span><img class='url_id_loader' style='display:none;' src='img/loader_16.gif'></img><span class="gradient"></span></span></p>
+					<p class='url'><span class="membrane">URL: http://itsalmo.st/#<span class='url_id'>&nbsp;</span><img class='url_id_loader' style='display:none;' src='img/loader_16.gif'></img><span class="gradient left-right-gradient"></span></span></p>
 					<div class='tier countdown-details'>
 						<label for='countdown-date'>on</label>
 						<input id='countdown-date' name='countdown-date' type='text' value='8/7/11'/>
@@ -82,14 +83,45 @@
 					</p>
 				</div>
 				
-				<div class='pane share-pane' style='display:none'></div>
+				<div class='pane share-pane'>
+					<div class='modal-overlay' style="display: none"></div>
+					<div class='modal-container' style="display: none">
+						<div class='modal'>
+							<!--<table class='share-table'>
+								<tbody>
+									<tr class="url">
+										<td class="icon">URL</td>
+										<td class="text">http://itsalmo.st/#beertime</td>
+									</tr>
+									<tr class="twitter">
+										<td class="icon"></td>
+										<td class="text"><a href=''>Share on Twitter</a></td>
+									</tr>
+									<tr class="fb">
+										<td class="icon"></td>
+										<td class="text"><a href=''>Share on Facebook</a></td>
+									</tr>
+								</tbody>
+							</table>-->
+							<ul>
+								<li class="url"><a href=""><span class="icon">URL</span><span class="text">http://itsalmo.st/#beertime</span></a></li>
+								<li class="twitter"><a href=""><span class="icon"></span><span class="text">Share on Twitter</span></a></li>
+								<li class="fb"><a href=""><span class="icon"></span><span class="text">Share on Facebook</span></a></li>
+							</ul>
+							<a id='share-done-btn' class='btn' href='#'>
+								<span>done</span>
+							</a>
+							<div class="gradient left-right-gradient"></div>
+						</div><!-- end .modal -->
+					</div><!-- end .modal-container -->
+				</div>
 			</div>
 			
 			<div class='footer'>
 				<span class="gradient"></span>
 				<div class='tier'>
 					<div class='social' style='opacity:0.0;'>
-						<a href='#'>
+						<a id="share-btn">
 							<span>Share This Countdown</span>
 						</a>
 						<a href='#'>
