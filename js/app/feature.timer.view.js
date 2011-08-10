@@ -100,7 +100,7 @@
 			},
 			expired:function(){
 				favicon.setFavicon("./img/favicon-animated.gif");
-				elements.qualifier.text('It is');
+				elements.qualifier.text('It\'s');
 				document.title = 'It\'s ' + timer.name;
 				elements.timer.hide();
 			}
