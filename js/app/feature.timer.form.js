@@ -169,7 +169,13 @@
 			"hammer time",
 			"donk o'clock",
 			"beer time",
-			"winning"
+			"winning",
+			"the apocalypse",
+			"lunch time",
+			"my birthday!",
+			"time to rock",
+			"happy hour",
+			"party time"
 		]);
 		
 		(function() {
