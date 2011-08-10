@@ -42,7 +42,23 @@
 		}
 		
 		function generate_id(name,append_random){
-			tempTimerId = $.trim(name.replace(/ /g,'').replace(/\./g,''));
+			var i, invalidCharacters;
+			tempTimerId = $.trim(name);
+			for(i in invalidCharacters = [
+				', ,',
+				'\\.', '\,',
+				'\!',
+				'\/', '\\\\',
+				'@',
+				'\'','\"',
+				'\;', '\:',
+				'\<', '\>',
+				'\\[', '\\]',
+				'\\(', '\\)'])
+			{
+				tempTimerId = tempTimerId.replace(new RegExp(invalidCharacters[i],'g'),'');
+			}
+			//tempTimerId.replace(/\//g, '').replace(/\\/g, '');
 			if(tempTimerId == oldTempTimerId && !append_random){
 				return;
 			}
@@ -207,6 +223,9 @@
 				},150).addClass('hidden');
 			});
 			tc.jQ('#countdown-name').blur(function() {
+				if(tc.jQ('#countdown-name').val().length){
+					return;
+				}
 				hint_timer = setTimeout(function(){
 					tc.jQ('.countdown-name-empty-overlay').animate({
 						opacity:0.35
