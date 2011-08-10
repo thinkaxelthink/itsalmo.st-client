@@ -211,7 +211,7 @@
 					tc.jQ('.countdown-name-empty-overlay').animate({
 						opacity:0.35
 					},150,function(){
-						hint_timer = setInterval(changeText, 3000);
+						hint_timer = setTimeout(changeText, 1500);
 					}).removeClass('hidden');
 				},100);
 			});
