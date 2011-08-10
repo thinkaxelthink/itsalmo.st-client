@@ -226,16 +226,16 @@
 					clearTimeout(hint_timer);
 				}
 				tc.jQ('.countdown-name-empty-overlay').stop().animate({
-					opacity:0.0
-				},150).addClass('hidden');
+					opacity:0.0,
+				},150).css('display','none').addClass('hidden');
 			});
 			tc.jQ('#countdown-name').blur(function() {
 				if(tc.jQ('#countdown-name').val().length){
 					return;
 				}
 				hint_timer = setTimeout(function(){
-					tc.jQ('.countdown-name-empty-overlay').animate({
-						opacity:0.35
+					tc.jQ('.countdown-name-empty-overlay').css('display','block').animate({
+						opacity:0.35,
 					},150,function(){
 						hint_timer = setTimeout(changeText, 1500);
 					}).removeClass('hidden');
