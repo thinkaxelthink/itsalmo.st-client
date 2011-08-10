@@ -41,6 +41,13 @@ a:visited{
 }
 .pane input[type=text].time-component { width:51px; text-align: center;}
 
+.pane input[type=text].invalid { 
+	-moz-box-shadow:0 0 15px rgba(255,219,94,0.6), inset 0px 0px 20px rgba(0,0,0,0.2);
+	-webkit-box-shadow:0 0 15px rgba(255,219,94,0.6), inset 0px 0px 20px rgba(0,0,0,0.2);
+	box-shadow:0 0 15px rgba(255,219,94,0.6), inset 0px 0px 20px rgba(0,0,0,0.2);
+	border:1px solid #ffda46;	
+}
+
 .input-sep { display:block; float:left; font-family: omnes-pro, Helvetica, Helvetica Neue, Arial, sans-serif; font-weight:300; margin: 0 10px; font-size:48px; position: relative; top: -8px;}
 
 #countdown-minutes {margin-right:15px;}
