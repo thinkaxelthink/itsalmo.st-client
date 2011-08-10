@@ -35,6 +35,7 @@
 			vertCenter(tc.jQ('.modal-container'));
 		});
 		tc.jQ('#share-done-btn, .modal-overlay').click(function() {
+			event.preventDefault();
 			tc.jQ('.modal-container').fadeOut(250);
 			tc.jQ('.modal-overlay').delay(150).fadeOut(400);
 		});
