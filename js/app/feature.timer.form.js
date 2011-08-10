@@ -192,7 +192,8 @@
 			"my birthday!",
 			"time to rock",
 			"happy hour",
-			"party time"
+			"party time",
+			'for cupcakes'
 		]);
 		
 		(function() {
