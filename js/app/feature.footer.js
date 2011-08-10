@@ -29,9 +29,11 @@
 			if(!d.hash.length){
 				elements.social.stop().animate({
 					'opacity':0.0
-				},500);
+				},500,function(){
+					$(this).css('visibility','hidden');
+				});
 			} else {
-				elements.social.stop().animate({
+				elements.social.stop().css('visibility','visible').animate({
 					'opacity':1.0
 				},500);
 			}
