@@ -142,7 +142,7 @@
 			}
 		});
 		
-		cycle();
+		//cycle();
 		
 		// Vertical centering
 		function vertCenter(ele) {
@@ -156,7 +156,7 @@
 			vertCenter(tc.jQ('.timer-pane'));
 			vertCenter(tc.jQ('.modal-container'));
 		});
-		
+	
 		vertCenter(tc.jQ('.pane'));
 		
 	});
