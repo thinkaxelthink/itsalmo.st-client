@@ -176,19 +176,23 @@
 		(function() {
 			var hint_timer, fadeSpeed, textDiv, i;
 			
-			hint_timer = setInterval(changeText, 3000);
-			fadeSpeed = 400;
+			hint_timer = setTimeout(changeText, 1000);
 			textDiv = $('.countdown-name-empty-overlay');
 			i = 0;
 			
 			function changeText() {
 				if (!textDiv.hasClass('hidden')) {
 					var j = i % emptyPhrases.length;
-					textDiv.fadeOut(fadeSpeed, function(){
-						textDiv.html(emptyPhrases[j]).fadeIn(fadeSpeed);
+					textDiv.animate({
+						opacity:0.0
+					}, 400, function(){
+						textDiv.html(emptyPhrases[j]).animate({
+							opacity:0.35
+						}, 400);
 					});
 					i++;
 				}
+				hint_timer = setTimeout(changeText,3000);
 			}
 			
 			/* handle the hiding/showing of the empty state text for countdown name */
