@@ -124,6 +124,7 @@
 		
 		app.events.bind('hashchange.hashChanged',function(e,d){
 			if(!d.hash.length){
+				vertCenter(tc.jQ('.timer-pane'));
 				dom.stop().animate({
 					opacity:0.0
 				},500,function(){
@@ -132,16 +133,31 @@
 				});
 			} else {
 				render.start();
+				vertCenter(tc.jQ('.timer-pane'));
 				dom.stop().css('opacity',0.0).show().animate({
 					opacity:1.0
 				},500,function(){
-					
 				});
 				
 			}
 		});
 		
 		cycle();
+		
+		// Vertical centering
+		function vertCenter(ele) {
+			var winHeight = tc.jQ(window).height() - tc.jQ('.footer').height();
+			var eleHeight = ele.height();
+			ele.css('top', Math.ceil((winHeight - eleHeight) * 0.4));
+		}
+		
+		tc.jQ(window).resize(function() {
+			vertCenter(tc.jQ('.start-pane'));
+			vertCenter(tc.jQ('.timer-pane'));
+			vertCenter(tc.jQ('.modal-container'));
+		});
+		
+		vertCenter(tc.jQ('.pane'));
 		
 	});
 	
