@@ -42,7 +42,7 @@
 		}
 		
 		function generate_id(name,append_random){
-			tempTimerId = $.trim(name.replace(/ /g,'').replace(/./g,''));
+			tempTimerId = $.trim(name.replace(/ /g,'').replace(/\./g,''));
 			if(tempTimerId == oldTempTimerId && !append_random){
 				return;
 			}
@@ -117,6 +117,7 @@
 		};
 		
 		elements.name.bind('change keyup',function(e,d){
+			console.log(elements.name.val());
 			generate_id(elements.name.val());
 		});
 		
@@ -141,7 +142,6 @@
 		});
 		
 		app.events.bind('hashchange.hashChanged',function(e,d){
-			
 			if(!d.hash.length){
 				clear_form();
 				document.title = 'It\'s Almost';
