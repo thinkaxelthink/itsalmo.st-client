@@ -243,6 +243,34 @@
 				},100);
 			});
 			
+			
+			/* am/pm picker */
+			var timePeriodInput = tc.jQ('#countdown-timeperiod');
+			var timePeriodPicker = tc.jQ('#timeperiod-picker');
+			
+			timePeriodInput.focus(function() {
+				var inputPos = timePeriodInput.position();
+				var inputWidth = timePeriodInput.outerWidth();
+				var inputHeight = timePeriodInput.outerHeight();
+				
+				timePeriodPicker.css({
+					'top': (inputPos.top + inputHeight + 2) + 'px',
+					'left': (inputPos.left + 10) + 'px',
+					'width': (inputWidth - 20) + 'px'
+				}).slideDown(400);
+			});
+			timePeriodInput.blur(function() {
+				timePeriodPicker.slideUp(200);
+			});
+			
+			timePeriodPicker.find('.timeperiod-am').click(function() {
+				timePeriodInput.val('AM');
+			});
+			timePeriodPicker.find('.timeperiod-pm').click(function() {
+				timePeriodInput.val('PM');
+			});
+			
+			
 		})();
 		
 	});
