@@ -32,6 +32,7 @@
 		tc.jQ('#share-btn').click(function() {
 			tc.jQ('.modal-overlay').fadeIn(600);
 			tc.jQ('.modal-container').delay(400).fadeIn(600);
+			vertCenter(tc.jQ('.modal-container'));
 		});
 		tc.jQ('#share-done-btn, .modal-overlay').click(function() {
 			tc.jQ('.modal-container').fadeOut(250);
