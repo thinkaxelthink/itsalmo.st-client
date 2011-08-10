@@ -116,7 +116,7 @@ a:visited{
 .share-pane .modal-container { position: absolute; top: 7%; left: 0; right: 0; z-index: 61;}
 .share-pane .modal { background-color: #fff; position: relative; width: 450px; text-align: center; padding: 55px 50px; margin: 0 auto 0; overflow: hidden; white-space: nowrap; -webkit-border-radius:5px; -moz-border-radius:5px; border-radius:5px; -webkit-box-shadow:1px 1px 20px rgba(0,0,0,0.35); -moz-box-shadow:1px 1px 20px rgba(0,0,0,0.35); box-shadow:1px 1px 20px rgba(0,0,0,0.35);}
 .share-pane ul { margin-bottom: 40px; overflow: hidden; max-width: 450px;}
-.share-pane ul a { display: block; text-align: left; margin-bottom: 30px; font-size: 24px; line-height: 1; font-weight: 400;}
+.share-pane ul a { display: block; text-align: left; margin-bottom: 30px; font-size: 24px; line-height: 1; font-weight: 300;}
 .share-pane ul a:hover { text-decoration: none; text-shadow: 1px 1px 0px #E5E1E1; filter: dropshadow(color=#E5E1E1, offx=1, offy=1); }
 .share-pane ul span { display: inline-block; }
 .share-pane ul span.icon { width: 80px; font-weight: 300; text-align: left}
