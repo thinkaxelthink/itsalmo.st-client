@@ -42,7 +42,7 @@
 		}
 		
 		function generate_id(name,append_random){
-			tempTimerId = $.trim(name.replace(/ /g,''));
+			tempTimerId = $.trim(name.replace(/ /g,'').replace(/./g,''));
 			if(tempTimerId == oldTempTimerId && !append_random){
 				return;
 			}
