@@ -46,7 +46,7 @@
 			var i, invalidCharacters;
 			tempTimerId = $.trim(name);
 			for(i in invalidCharacters = [
-				', ,',
+				' ',
 				'\\.', '\,',
 				'\!',
 				'\/', '\\\\',
