@@ -159,17 +159,49 @@
 				});
 			}
 		});
+		
+		/* cycle through empty state text */
+		var emptyPhrases = new Array("time to go", "hammer time", "donk o'clock", "beer time", "winning");
+		
+		function shuffleArray(arr) {
+			// array shuffler from http://yelotofu.com/2008/08/jquery-shuffle-plugin/
+			for(var j, x, i = arr.length; i; j = parseInt(Math.random() * i), x = arr[--i], arr[i] = arr[j], arr[j] = x);
+			return arr;
+		};
+
+		tc.jQ(function() {
+			var timer = setInterval(changeText, 3000);
+			var fadeSpeed = 400;
+			var textDiv = tc.jQ('.countdown-name-empty-overlay')
+			var i = 0;
+			
+			shuffleArray(emptyPhrases);
+
+			function changeText() {
+				if (textDiv.hasClass('hidden')) {
+					// do nothing
+				} else {
+					var j = i % emptyPhrases.length;
+					textDiv.fadeOut(fadeSpeed, function(){
+						textDiv.html(emptyPhrases[j]).fadeIn(fadeSpeed);
+					});
+					i++;
+				}
+			}
+		});
+		
+		
 	
 		/* handle the hiding/showing of the empty state text for countdown name */
 		tc.jQ('.countdown-name-empty-overlay').click(function() {
 			tc.jQ('#countdown-name').focus();
 		});
 		tc.jQ('#countdown-name').focus(function() {
-			tc.jQ('.countdown-name-empty-overlay').fadeOut(150);
+			tc.jQ('.countdown-name-empty-overlay').fadeOut(150).addClass('hidden');
 		});
 		tc.jQ('#countdown-name').blur(function() {
 			if (tc.jQ(this).val() == '') {
-				tc.jQ('.countdown-name-empty-overlay').fadeIn(150);
+				tc.jQ('.countdown-name-empty-overlay').fadeIn(150).removeClass('hidden');
 			}
 		});
 	
