@@ -18,10 +18,10 @@
 			modal:{
 				overlay:$('.modal-overlay'),
 				container:$('.modal-container'),
-				url_link:$('.url a'),
-				url_text:$('.url a .text'),
-				twitter_link:$(),
-				facebook_link:$()
+				url_link:$('.modal-container').find('.url a'),
+				url_text:$('.modal-container').find('.url a .text'),
+				twitter_link:$('.modal-container').find('.twitter a'),
+				facebook_link:$('.modal-container').find('.fb a')
 			}
 		};
 		
@@ -38,18 +38,16 @@
 		});
 		
 		app.events.bind('timer.manager.timerLoaded',function(e,d){
-			var url;
-			console.log(e);
-			console.log(d);
+			var url, twitter_url, facebook_url;
 			
-			url = 'http://itsalmo.st/#'+d.id;
+			url = 'http://itsalmo.st/#' + window.escape(d.id);
+			twitter_url = 'http://twitter.com/share?url=' + window.escape(url) + '&text=' + window.escape('It\'s Almost ' + d.name);
+			facebook_url = 'http://www.facebook.com/sharer.php?u=' + window.escape(url) + '&t=' + window.escape('It\'s Almost ' + d.name);
 			
 			elements.modal.url_link.attr('href',url);
-			elements.modal.url_text.text('http://itsalmo.st/#'+url);
-			
-			'http://twitter.com/home?status=XXXXXX'
-			'http://www.facebook.com/sharer.php?u=XXXXXXX&t=XXXXXXX'
-			
+			elements.modal.url_text.text(url);
+			elements.modal.twitter_link.attr('href',twitter_url);
+			elements.modal.facebook_link.attr('href',facebook_url);
 		});
 		
 		/* handle modal hiding and showing */
