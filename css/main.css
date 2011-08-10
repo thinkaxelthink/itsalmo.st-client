@@ -60,7 +60,7 @@ a:visited{
 .start-pane .tier,
 .start-pane p.url { width: 750px; }
 .start-pane .tier.countdown-name { position: relative; }
-.start-pane .tier.countdown-details { margin-top: 26px; }
+.start-pane .tier.countdown-details { margin-top: 35px; }
 .start-pane .tier:first-child { margin-top:0; text-align:center;}
 .start-pane #countdown-date { width:200px; text-align: center; }
 .start-pane label.its-almost { width:275px; font-size: 60px; text-align: right; padding-left: 0; white-space: nowrap;}
