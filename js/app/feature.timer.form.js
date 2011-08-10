@@ -262,13 +262,17 @@
 				timePeriodPicker.slideUp(200);
 			});
 			
-			timePeriodPicker.find('.timeperiod-am').click(function() {
+			/*timePeriodPicker.find('.timeperiod-am').click(function() {
 				timePeriodInput.val('AM');
 			});
 			timePeriodPicker.find('.timeperiod-pm').click(function() {
 				timePeriodInput.val('PM');
-			});
+			});*/
 			
+			timePeriodPicker.find('a').click(function() {
+				var theText = tc.jQ(this).text();
+				timePeriodInput.val(theText);
+			});
 			
 		})();
 		
