@@ -34,6 +34,7 @@
 			elements.url.css({
 				opacity:0.0
 			});
+			elements.start_btn.addClass('disabled');
 			elements.name.get(0).value = '';
 			elements.date.get(0).value = (future.getMonth()+1)+'/'+future.getDate()+'/'+future.getFullYear();
 			elements.time.hour.get(0).value = ((future.getHours() > 12) ? future.getHours() - 12 : future.getHours());
