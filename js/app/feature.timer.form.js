@@ -161,7 +161,7 @@
 		});
 		
 		/* cycle through empty state text */
-		var emptyPhrases = new Array("time to go", "hammer time", "donk o'clock", "beer time", "winning");
+		var emptyPhrases = new Array("time to go", "hammer time", "donk o'clock", "beer time", "winning", "my birthday!", "happy hour", "cupcake time", "the apocalypse", "lunchtime");
 		
 		function shuffleArray(arr) {
 			// array shuffler from http://yelotofu.com/2008/08/jquery-shuffle-plugin/
