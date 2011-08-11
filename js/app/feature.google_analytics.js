@@ -17,7 +17,6 @@
 		}
 		
 		app.events.bind('hashchange.hashChanged',function(e,d){
-			console.log(d);
 			if(!d.hash.length){
 				app.google_analytics.tracker._trackEvent('page', 'home');
 			} else {

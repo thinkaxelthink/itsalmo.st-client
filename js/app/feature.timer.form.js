@@ -105,7 +105,6 @@
 			
 			date = elements.date.val().split('/');
 			if(date.length != 3){
-				console.log('date incorrect');
 				return false;
 			}
 			
@@ -118,7 +117,6 @@
 			);
 			
 			if(date.getTime() < (new Date())){
-				console.log('before now');
 				return false;
 			}
 			
