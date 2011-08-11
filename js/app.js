@@ -39,12 +39,10 @@ tc.app = function(page){
 };
 
 tc.app.prototype.init = function(page){
-	var me;
-	me = this;
 	if(page.features){
 		for(i in page.features){
 			if(tc.jQ.isFunction(page.features[i])){
-				if(page.features[i](me) === false){
+				if(page.features[i](this) === false){
 					break;
 				}
 			}
