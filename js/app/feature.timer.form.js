@@ -176,6 +176,8 @@
 			}
 		});
 		
+		
+		/* handle the hiding/showing of the empty state text for countdown name */
 		var emptyPhrases;
 		emptyPhrases = (function(arr){
 			// array shuffler from http://yelotofu.com/2008/08/jquery-shuffle-plugin/
@@ -216,8 +218,7 @@
 				}
 				hint_timer = setTimeout(changeText,3000);
 			}
-			
-			/* handle the hiding/showing of the empty state text for countdown name */
+
 			tc.jQ('.countdown-name-empty-overlay').click(function() {
 				tc.jQ('#countdown-name').focus();
 			});
@@ -241,44 +242,49 @@
 					}).removeClass('hidden');
 				},100);
 			});
-			
-			
-			/* am/pm picker */
-			var timePeriodInput = tc.jQ('#countdown-timeperiod');
-			var timePeriodPicker = tc.jQ('#timeperiod-picker');
-			
-			timePeriodInput.focus(function() {
-				var inputPos = timePeriodInput.position();
-				var inputWidth = timePeriodInput.outerWidth();
-				var inputHeight = timePeriodInput.outerHeight();
-				
-				timePeriodPicker.css({
-					'top': (inputPos.top + inputHeight + 2) + 'px',
-					'left': (inputPos.left + 10) + 'px',
-					'width': (inputWidth - 20) + 'px'
-				}).slideDown(400);
-			});
-			timePeriodInput.blur(function() {
-				timePeriodPicker.slideUp(200);
-				var v = timePeriodInput.val();
-				if (v!='am' && v!='AM' && v!='aM' && v!='Am' && v!='pm' && v!='PM' && v!='pM' && v!='Pm' ) {
-					timePeriodInput.val('AM');
-				}
-			});
-			
-			/*timePeriodPicker.find('.timeperiod-am').click(function() {
-				timePeriodInput.val('AM');
-			});
-			timePeriodPicker.find('.timeperiod-pm').click(function() {
-				timePeriodInput.val('PM');
-			});*/
-			
-			timePeriodPicker.find('a').click(function() {
-				var theText = tc.jQ(this).text();
-				timePeriodInput.val(theText);
-			});
-			
 		})();
+		
+		
+		/* makes 'minutes' field always stay at two digits */
+		var minutesInput = tc.jQ('#countdown-minutes');
+		minutesInput.blur(function() {
+			var v = minutesInput.val();
+			if (v=='0'||v=='1'||v=='2'||v=='3'||v=='4'||v=='5'||v=='6'||v=='7'||v=='8'||v=='9') {
+				minutesInput.val('0'+v);
+			} else if (isNaN(v) || v < 0 || v > 59) {
+				minutesInput.val('00');
+			} 
+		});
+		
+		
+		/* am/pm picker */
+		var timePeriodInput = tc.jQ('#countdown-timeperiod');
+		var timePeriodPicker = tc.jQ('#timeperiod-picker');
+		
+		timePeriodInput.focus(function() {
+			var inputPos = timePeriodInput.position();
+			var inputWidth = timePeriodInput.outerWidth();
+			var inputHeight = timePeriodInput.outerHeight();
+			
+			timePeriodPicker.css({
+				'top': (inputPos.top + inputHeight + 2) + 'px',
+				'left': (inputPos.left + 10) + 'px',
+				'width': (inputWidth - 20) + 'px'
+			}).slideDown(400);
+		});
+		timePeriodInput.blur(function() {
+			timePeriodPicker.slideUp(200);
+			var v = timePeriodInput.val();
+			if (v!='am' && v!='AM' && v!='aM' && v!='Am' && v!='pm' && v!='PM' && v!='pM' && v!='Pm' ) {
+				timePeriodInput.val('AM');
+			}
+		});
+		
+		timePeriodPicker.find('a').click(function() {
+			var theText = tc.jQ(this).text();
+			timePeriodInput.val(theText);
+		});
+		
 		
 	});
 	
