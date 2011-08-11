@@ -246,20 +246,69 @@
 		})();
 		
 		
-		/* makes 'minutes' field always stay at two digits */
+		/* define input objects */
+		var hoursInput = tc.jQ('#countdown-hour');
 		var minutesInput = tc.jQ('#countdown-minutes');
-		minutesInput.blur(function() {
+		var timePeriodInput = tc.jQ('#countdown-timeperiod');
+		
+		
+		/* constrain minutes and hours to acceptable values  */
+		hoursInput.blur(function() { 
+			var v = hoursInput.val();
+			if (isNaN(v) || v < 1 || v > 12) {
+				hoursInput.val('12');
+			}
+		});
+		minutesInput.blur(function() { 
+			fixMinutes();
+		});
+		function fixMinutes() {
 			var v = minutesInput.val();
 			if (v=='0'||v=='1'||v=='2'||v=='3'||v=='4'||v=='5'||v=='6'||v=='7'||v=='8'||v=='9') {
 				minutesInput.val('0'+v);
 			} else if (isNaN(v) || v < 0 || v > 59) {
 				minutesInput.val('00');
-			} 
-		});
+			}
+		}
+		
+		
+		/* scroll through number inputs */
+		hoursInput.bind("mousewheel", function(event, delta) {
+			if (delta > 0) {
+				this.value = parseInt(this.value) + 1;
+			} else {
+				if (parseInt(this.value) > 0) {
+					this.value = parseInt(this.value) - 1;
+				}
+			}
+			if (this.value > 12) {
+				this.value = 12;
+			} else if (this.value < 1) {
+				this.value = 1;
+			}
+ 			return false;
+	     });
+		minutesInput.bind("mousewheel", function(event, delta) {
+			var valueSplit = this.value.split("");
+			if (valueSplit[0] == 0) {
+				this.value = valueSplit[1]
+			}
+			if (delta > 0) {
+				this.value = parseInt(this.value) + 1;
+			} else {
+				if (parseInt(this.value) > 0) {
+					this.value = parseInt(this.value) - 1;
+				}
+			}
+			if (this.value > 59) {
+				this.value = 59;
+			}
+			fixMinutes();
+ 			return false;
+	     });
 		
 		
 		/* am/pm picker */
-		var timePeriodInput = tc.jQ('#countdown-timeperiod');
 		var timePeriodPicker = tc.jQ('#timeperiod-picker');
 		
 		timePeriodInput.focus(function() {
