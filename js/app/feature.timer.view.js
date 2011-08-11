@@ -45,7 +45,7 @@
 				
 			},
 			start:function(){
-				favicon.setFavicon("./img/favicon-static.gif");
+				favicon.setFavicon("./img/favicon/favicon-still.png");
 				elements.qualifier.text('It\'s almost');
 				elements.timer.show();
 				elements.minutes.parent().show();
@@ -99,7 +99,7 @@
 				return true;
 			},
 			expired:function(){
-				favicon.setFavicon("./img/favicon-animated.gif");
+				favicon.setFavicon("./img/favicon/favicon-ani.gif");
 				elements.qualifier.text('It\'s');
 				document.title = 'It\'s ' + timer.name;
 				elements.timer.hide();
