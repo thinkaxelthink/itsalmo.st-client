@@ -21,7 +21,8 @@
 			time:{
 				hour:dom.find('#countdown-hour'),
 				minute:dom.find('#countdown-minutes'),
-				period:dom.find('#countdown-timeperiod')
+				period:dom.find('#countdown-timeperiod'),
+				period_picker:dom.find('#timeperiod-picker')
 			},
 			start_btn:dom.find('#start-btn')
 		};
@@ -246,100 +247,94 @@
 		})();
 		
 		
-		/* define input objects */
-		var hoursInput = tc.jQ('#countdown-hour');
-		var minutesInput = tc.jQ('#countdown-minutes');
-		var timePeriodInput = tc.jQ('#countdown-timeperiod');
-		
-		
 		/* constrain minutes and hours to acceptable values  */
-		hoursInput.blur(function() { 
-			var v = hoursInput.val();
+		elements.time.hour.blur(function() { 
+			var v = elements.time.hour.val();
 			if (isNaN(v) || v < 1 || v > 12) {
-				hoursInput.val('12');
+				elements.time.hour.val('12');
 			}
 		});
-		minutesInput.blur(function() { 
+		elements.time.minute.blur(function() { 
 			fixMinutes();
 		});
 		function fixMinutes() {
-			var v = minutesInput.val();
+			var v = elements.time.minute.val();
 			if (v=='0'||v=='1'||v=='2'||v=='3'||v=='4'||v=='5'||v=='6'||v=='7'||v=='8'||v=='9') {
-				minutesInput.val('0'+v);
+				elements.time.minute.val('0'+v);
 			} else if (isNaN(v) || v < 0 || v > 59) {
-				minutesInput.val('00');
+				elements.time.minute.val('00');
 			}
 		}
 		
-		
 		/* scroll through number inputs */
-		
 		var hoursChange = 0;
 		elements.time.hour.bind("mousewheel", function(event, delta) {
-			
-			hoursChange += delta;
-			console.log(delta);
-			
-			if (delta > 0) {
+			hoursChange += (delta/2);
+			if (hoursChange > 1) {
 				this.value = parseInt(this.value) + 1;
-			} else {
+				hoursChange = 0;
+			} else if (hoursChange < -1) {
 				if (parseInt(this.value) > 0) {
 					this.value = parseInt(this.value) - 1;
 				}
+				hoursChange = 0;
 			}
+			
 			if (this.value > 12) {
 				this.value = 12;
 			} else if (this.value < 1) {
 				this.value = 1;
 			}
- 			return false;
-	     });
-	
+			return false;
+		});
+			
+		var minutesChange = 0;
 		elements.time.minute.bind("mousewheel", function(event, delta) {
 			var valueSplit = this.value.split("");
 			if (valueSplit[0] == 0) {
 				this.value = valueSplit[1]
 			}
-			if (delta > 0) {
+			minutesChange += (delta/2);
+			if (minutesChange > 1) {
 				this.value = parseInt(this.value) + 1;
-			} else {
+				minutesChange = 0;
+			} else if (minutesChange < -1) {
 				if (parseInt(this.value) > 0) {
 					this.value = parseInt(this.value) - 1;
 				}
+				minutesChange = 0;
 			}
 			if (this.value > 59) {
 				this.value = 59;
 			}
 			fixMinutes();
- 			return false;
-	     });
+			return false;
+		});
 		
 		
 		/* am/pm picker */
-		var timePeriodPicker = tc.jQ('#timeperiod-picker');
-		
-		timePeriodInput.focus(function() {
-			var inputPos = timePeriodInput.position();
-			var inputWidth = timePeriodInput.outerWidth();
-			var inputHeight = timePeriodInput.outerHeight();
+		elements.time.period.focus(function() {
+			var inputPos = elements.time.period.position();
+			var inputWidth = elements.time.period.outerWidth();
+			var inputHeight = elements.time.period.outerHeight();
 			
-			timePeriodPicker.css({
+			elements.time.period_picker.css({
 				'top': (inputPos.top + inputHeight + 2) + 'px',
 				'left': (inputPos.left + 10) + 'px',
 				'width': (inputWidth - 20) + 'px'
 			}).slideDown(400);
 		});
-		timePeriodInput.blur(function() {
-			timePeriodPicker.slideUp(200);
-			var v = timePeriodInput.val();
+		elements.time.period.blur(function() {
+			elements.time.period_picker.slideUp(200);
+			var v = elements.time.period.val();
 			if (v!='am' && v!='AM' && v!='aM' && v!='Am' && v!='pm' && v!='PM' && v!='pM' && v!='Pm' ) {
-				timePeriodInput.val('AM');
+				elements.time.period.val('AM');
 			}
 		});
 		
-		timePeriodPicker.find('a').click(function() {
+		elements.time.period_picker.find('a').click(function() {
 			var theText = tc.jQ(this).text();
-			timePeriodInput.val(theText);
+			elements.time.period.val(theText);
 		});
 		
 		
