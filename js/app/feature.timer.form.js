@@ -273,7 +273,13 @@
 		
 		
 		/* scroll through number inputs */
-		hoursInput.bind("mousewheel", function(event, delta) {
+		
+		var hoursChange = 0;
+		elements.time.hour.bind("mousewheel", function(event, delta) {
+			
+			hoursChange += delta;
+			console.log(delta);
+			
 			if (delta > 0) {
 				this.value = parseInt(this.value) + 1;
 			} else {
@@ -288,7 +294,8 @@
 			}
  			return false;
 	     });
-		minutesInput.bind("mousewheel", function(event, delta) {
+	
+		elements.time.minute.bind("mousewheel", function(event, delta) {
 			var valueSplit = this.value.split("");
 			if (valueSplit[0] == 0) {
 				this.value = valueSplit[1]
