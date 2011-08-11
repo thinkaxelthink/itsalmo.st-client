@@ -228,7 +228,7 @@ body.broswer-ipad .tier.countdown-details input[type="text"] { background-image:
 	radial, 50% 50%, 125, 50% 50%, 250, from(rgba(0,0,0,0)), to(rgba(0,0,0,.5))
 );}
 
-.content .browser-invalid { position:absolute; top:0; width:100%; background-color:#fff0bd; border-bottom:1px solid #f7e28c; height:40px;}
+.content .browser-invalid { position:absolute; top:-40px; width:100%; background-color:#fff0bd; border-bottom:1px solid #f7e28c; height:40px; z-index:1000;}
 .content .browser-invalid .browser-message p { font-size: 15px; font-weight:300; text-align:center; margin-top:8px; text-shadow:1px 1px 1px rgba(255,255,255,0.8);}
 .content .browser-invalid .browser-message a { font-weight:500; text-decoration:none;}
 .content .browser-invalid a.browser-close {width:12px; height:12px; background-image:url("../img/close.png"); position:absolute; right:18px; top:15px;}
