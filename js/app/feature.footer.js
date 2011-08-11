@@ -52,8 +52,24 @@
 			elements.modal.facebook_link.attr('href',facebook_url);
 		});
 		
+		elements.modal.twitter_link.bind('click',function(e,d){
+			e.preventDefault();
+			var opts		= 'status=1' +
+									',width='  + 575  +
+									',height=' + 400;
+			window.open(elements.modal.twitter_link.attr('href'), 'Twitter', opts);
+		});
+		
+		elements.modal.facebook_link.bind('click',function(e,d){
+			e.preventDefault();
+			var opts		= 'status=1' +
+									',width='  + 1000  +
+									',height=' + 600;
+			window.open(elements.modal.facebook_link.attr('href'), 'Facebook', opts);
+		});
+		
 		/* handle modal hiding and showing */
-		elements.share_button.click(function() {
+		elements.share_button.bind('click',function() {
 			elements.modal.overlay.fadeIn(600);
 			elements.modal.container.css('opacity',0.0).show().delay(400).animate({
 				opacity:1.0
