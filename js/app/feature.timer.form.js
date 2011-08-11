@@ -289,13 +289,14 @@
  			return false;
 	     });
 		minutesInput.bind("mousewheel", function(event, delta) {
+			console.log(delta);
 			var valueSplit = this.value.split("");
 			if (valueSplit[0] == 0) {
 				this.value = valueSplit[1]
 			}
 			if (delta > 0) {
 				this.value = parseInt(this.value) + 1;
-			} else {
+			} else if (delta < 0) {
 				if (parseInt(this.value) > 0) {
 					this.value = parseInt(this.value) - 1;
 				}
