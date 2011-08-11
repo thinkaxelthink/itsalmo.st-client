@@ -260,6 +260,10 @@
 			});
 			timePeriodInput.blur(function() {
 				timePeriodPicker.slideUp(200);
+				var v = timePeriodInput.val();
+				if (v!='am' && v!='AM' && v!='aM' && v!='Am' && v!='pm' && v!='PM' && v!='pM' && v!='Pm' ) {
+					timePeriodInput.val('AM');
+				}
 			});
 			
 			/*timePeriodPicker.find('.timeperiod-am').click(function() {
